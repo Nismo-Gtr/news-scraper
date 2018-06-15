@@ -18,7 +18,7 @@ var PORT = 3000;
 var app = express();
 
 // Configure middleware
-
+connection = mysql.createConnection(process.env.JAWSDB_URL);
 // Use morgan logger for logging requests
 app.use(logger("dev"));
 // Use body-parser for handling form submissions
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/scraper");
+mongoose.connect("mongodb://nismo:M8#Kh=C)>APQdX_iu8@ds153700.mlab.com:53700/heroku_tq3h5dtz");
 
 // Routes
 
