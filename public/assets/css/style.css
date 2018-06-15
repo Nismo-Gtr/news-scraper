@@ -1,0 +1,42 @@
+body { 
+  background: url("../img/newspaper.jpg");
+  font-family: 'Lora', serif;
+}
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+}
+.jumbotron {
+  width: 100%;
+}
+
+#articles {
+  display: inline-block;
+  color: white;
+  background: rgba(0,0,0, .4);
+  padding: 2%;
+  overflow: auto;
+  width: 60%;
+  height: 700px;
+}
+#comments {
+  color: white;
+  background: rgba(0,0,0, .4);
+  float: right;
+  width: 30%;
+}
+textarea, input {
+  display: block;
+  width: 100%;
+  background-color: white;
+}
+input {
+  height: 36px;
+  font-size: 24px;
+}
+textarea {
+  height: 200px;
+  font-size: 18px;
+}
