@@ -58,7 +58,7 @@ $(document).on("click", "#savecomment", function() {
     // With that done
     .then(function(data) {
       // Log the response
-      // console.log(data);
+      console.log(data);
       // Empty the comments section
       $("#comments").empty();
     });

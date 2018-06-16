@@ -18,7 +18,7 @@ var PORT = 3000;
 var app = express();
 
 // Configure middleware
-// connection = mysql.createConnection("mysql://ui95dhlhyyc45wx4:xul8nprkwq0bgrs2@g3v9lgqa8h5nq05o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/iggw6556np32717p");
+
 // Use morgan logger for logging requests
 app.use(logger("dev"));
 // Use body-parser for handling form submissions
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://cowan:Community6@ds153700.mlab.com:53700/heroku_tq3h5dtz");
+mongoose.connect("mongodb://localhost/scraper");
 
 // Routes
 
@@ -49,7 +49,7 @@ app.get("/scrape", function(req, res) {
       result.link = $(this)
         .parent("a")
         .attr("href");
-
+      
       // Create a new Article using the `result` object built from scraping
       db.Article.create(result)
         .then(function(dbArticle) {
@@ -59,7 +59,6 @@ app.get("/scrape", function(req, res) {
         .catch(function(err) {
           // If an error occurred, send it to the client
           console.log(err)
-          return res.redirect("/");
         });
       });
     return res.redirect("/");
